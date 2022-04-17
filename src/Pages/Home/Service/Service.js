@@ -11,8 +11,8 @@ const Service = ({ service }) => {
                 <div className='pt-5'>
                     <h4 className='text-warning'>{name}</h4>
                     <p>{des}</p>
-                    <h5>${price}</h5>
-                    <Link style={{ textDecoration: 'none' }} className='btn btn-warning mt-2' to='/checkout'>Chechout</Link>
+                    <h5>Booking: ${price}</h5>
+                    <Link style={{ textDecoration: 'none', fontFamily: 'loster' }} className='btn btn-warning mt-2' to='/checkout'>Book Now</Link>
                 </div>
             </div>
         </div>

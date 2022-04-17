@@ -5,7 +5,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 
 const Footer = () => {
     return (
-        <footer style={{ fontSize: '20px', position: 'fixed', bottom: '0', left: '0', right: '0' }} className='bg-secondary text-warning py-2 w-100'>
+        <footer style={{ fontSize: '20px', position: 'fixed', bottom: '0', left: '0', right: '0', borderTop: '1px solid grey' }} className='bg-dark text-warning py-2 w-100'>
             <span className='px-3'><SiFacebook /></span>
             <span className='px-3'><FaInstagramSquare /></span>
             <span className='px-3'><AiFillTwitterCircle /></span>
