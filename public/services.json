@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "name": "wedding",
-        "price": 45,
-        "img": "/src/imges/services/wedding.png",
-        "des": "gooded work jg jhgh jhgfhughk hjgjhg jhgjhg jhfjfg jhgjhgjh hgh jhhghj jhhghghj jhjhgjhg gigi"
+        "name": "Traditional Wedding Photograpy",
+        "price": 450,
+        "img": "https://media-cdn.tripadvisor.com/media/photo-s/1d/b5/55/24/hiwaga-weddings-team.jpg",
+        "des": "Professional camera and lens kits. profesional lighting setup, single or multi-shooter"
     },
     {
         "id": 2,
-        "name": "wedding",
-        "price": 45,
-        "img": "/src/imges/services/wedding.png",
-        "des": "gooded work jg jhgh jhgfhughk hjgjhg jhgjhg jhfjfg jhgjhgjh hgh jhhghj jhhghghj jhjhgjhg gigi"
+        "name": "Natural Wedding Photography",
+        "price": 500,
+        "img": "https://www.ekrpictures.com/wp-content/uploads/2021/04/8EKR-Pictures-October-Tipi-Wedding-in-North-Wales.jpg",
+        "des": "High-quality photography. Full-day or half-day photo shoots with all nessary equipment"
     },
     {
         "id": 3,
-        "name": "wedding",
-        "price": 45,
-        "img": "/src/imges/services/wedding.png",
-        "des": "gooded work jg jhgh jhgfhughk hjgjhg jhgjhg jhfjfg jhgjhgjh hgh jhhghj jhhghghj jhjhgjhg gigi"
+        "name": "Editorial Wedding Photography",
+        "price": 600,
+        "img": "https://westcottu.com/wp-content/uploads/BDX29045.jpg",
+        "des": "Photo editing, color corrention and retouching. Complete photo libray access with full usage right."
     }
 ]

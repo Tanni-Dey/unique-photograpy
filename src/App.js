@@ -8,6 +8,7 @@ import Blog from './Pages/Blog/Blog';
 import Login from './Pages/Login/Login';
 import Notfound from './Pages/Notfound/Notfound';
 import Home from './Pages/Home/Home/Home';
+import Footer from './Shared/Footer/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='*' element={<Notfound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

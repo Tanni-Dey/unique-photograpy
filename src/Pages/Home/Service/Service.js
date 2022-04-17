@@ -1,15 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Service = ({ service }) => {
     const { id, name, price, des, img } = service;
     return (
-        <div className='col-md-4'>
+        <div className='col-md-4 py-5'>
             <div>
                 <img src={img} className='img-fluid' alt="" />
-                <h4>{name}</h4>
-                <p>{des}</p>
-                <h5>{price}</h5>
-                <button>Chechout</button>
+                <div className='pt-5'>
+                    <h4 className='text-warning'>{name}</h4>
+                    <p>{des}</p>
+                    <h5>${price}</h5>
+                    <Link style={{ textDecoration: 'none' }} className='btn btn-warning mt-2' to='/checkout'>Chechout</Link>
+                </div>
             </div>
         </div>
     );
