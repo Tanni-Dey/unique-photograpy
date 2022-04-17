@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "wedding",
+        "price": 45,
+        "img": "/src/imges/services/wedding.png",
+        "des": "gooded work jg jhgh jhgfhughk hjgjhg jhgjhg jhfjfg jhgjhgjh hgh jhhghj jhhghghj jhjhgjhg gigi"
+    },
+    {
+        "id": 2,
+        "name": "wedding",
+        "price": 45,
+        "img": "/src/imges/services/wedding.png",
+        "des": "gooded work jg jhgh jhgfhughk hjgjhg jhgjhg jhfjfg jhgjhgjh hgh jhhghj jhhghghj jhjhgjhg gigi"
+    },
+    {
+        "id": 3,
+        "name": "wedding",
+        "price": 45,
+        "img": "/src/imges/services/wedding.png",
+        "des": "gooded work jg jhgh jhgfhughk hjgjhg jhgjhg jhfjfg jhgjhgjh hgh jhhghj jhhghghj jhjhgjhg gigi"
+    }
+]
