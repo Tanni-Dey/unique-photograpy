@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <>
-            <Navbar className='text-warning' sticky='top' expand="lg" >
+            <Navbar className='text-warning' expand="lg" >
                 <Container>
                     <Navbar.Brand className='text-warning' as={Link} to="/">Unique Photography</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

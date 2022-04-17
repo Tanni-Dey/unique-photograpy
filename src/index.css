@@ -9,6 +9,17 @@ body {
   color: white !important;
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Lobster', cursive;
+}
+
+p {
+
+  font-family: 'Arima Madurai', cursive;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
