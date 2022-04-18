@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Spinner } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,9 @@ import auth from '../../firebase.init';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
+    if (loading) {
+        <Spinner animation="grow" variant="warning" />
+    }
     return (
         <>
             <Navbar className='text-warning' expand="lg" >

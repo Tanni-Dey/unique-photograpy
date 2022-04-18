@@ -35,11 +35,11 @@ const Signup = () => {
                     <Form.Control type="text" name='name' placeholder="Your Name" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" name='email' placeholder="Enter email" />
+                    <Form.Control type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" name='password' placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control type="password" name='cpassword' placeholder="Confirm Password" />

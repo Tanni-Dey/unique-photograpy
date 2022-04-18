@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useAuthState, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import React, { useEffect, useRef } from 'react';
+import { Button, Form, Spinner } from 'react-bootstrap';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
@@ -9,44 +9,57 @@ import Social from '../../Shared/Social/Social';
 const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();
+    const emailRef = useRef('')
+    const passwordRef = useRef('')
     const [user, loading, error] = useAuthState(auth);
-    const [sendPasswordResetEmail, sending, resetPassError] = useSendPasswordResetEmail(
-        auth
-    );
 
-    let from = location.state?.from?.pathname || "/";
+    const [signInWithEmailAndPassword, loginUser, loginLoading, loginError,] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, resetPassError] = useSendPasswordResetEmail(auth);
+
+    let from = location?.state?.from?.pathname || "/";
     useEffect(() => {
         if (user) {
             navigate(from, { replace: true });
         }
     })
-    const handleResetPassword = async (event) => {
+    if (loading || loginLoading || sending) {
+        <Spinner animation="grow" variant="warning" />
+    }
+
+    const handleLogin = event => {
+        event.preventDefault();
         const emailValue = event.target.email.value;
-        if (emailValue) {
-            await sendPasswordResetEmail(emailValue);
-            toast.success('Sent email');
+        const passwordValue = event.target.password.value;
+        signInWithEmailAndPassword(emailValue, passwordValue)
+    }
+
+    const handleResetPassword = async () => {
+        let emailValue = emailRef.current.value;
+        if (!emailValue) {
+            return toast.error('Please Enter Your Email')
         }
-        else {
-            toast.error('Please Enter Your Email')
-        }
+        await sendPasswordResetEmail(emailValue);
+        toast.success('Sent email');
     }
     return (
         <div className='w-50 mx-auto py-5'>
             <ToastContainer />
             <h1>Please Login</h1>
-            <Form className='w-50 mx-auto py-5'>
+            <Form onSubmit={handleLogin} className='w-50 mx-auto py-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" ref={emailRef} name="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" ref={passwordRef} name="password" placeholder="Password" required />
                 </Form.Group>
                 <Button className='d-block w-100' variant="warning" type="submit">
                     Login
                 </Button>
             </Form>
-            <p>Forget Password ? <Link onClick={handleResetPassword} className='text-warning' to='/signup'>Reset Password</Link></p>
+            <p>{resetPassError?.message}</p>
+            <p>Forget Password ? <button onClick={handleResetPassword} className='btn btn-link text-warning' >Reset Password</button></p>
             <p>Create Account ? <Link className='text-warning' to='/signup'>Please Sign Up</Link></p>
             <Social />
         </div>

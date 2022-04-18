@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Unique Photography
+
+## Live Link :
+[http://localhost:3000](http://localhost:3000)
+
+### Description:
+* This is a Wedding Photographer Servicing site, have 4-5 pages.
+* Home page have a header, her servce, her portfolio and a simple footer. 
+* For booking this photographer, have to login this site.
+* Some libray use in this site : react router, react firebase hooks, react bootstrap, react tostify, react icon etc.
+* Firebase use for athentication system.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
