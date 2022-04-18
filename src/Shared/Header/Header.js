@@ -1,29 +1,37 @@
 import React from 'react';
+import logo from '../../imges/logo.png'
 import { Container, Nav, Navbar, Spinner } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
-    if (loading) {
-        <Spinner animation="grow" variant="warning" />
-    }
     return (
         <>
             <Navbar className='text-warning' expand="lg" >
                 <Container>
-                    <Navbar.Brand className='text-warning' as={Link} to="/">Unique Photography</Navbar.Brand>
+                    <Navbar.Brand className='text-light' as={Link} to="/"><img src={logo} height='30px' alt="" /> Unique Photography</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            <Nav.Link className='text-warning' as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} className='text-warning' to="/about">About</Nav.Link>
-                            <Nav.Link as={Link} className='text-warning' to="/blog">Blog</Nav.Link>
+                        <Nav className="ms-auto align-items-center">
+                            <NavLink style={{ textDecoration: 'none', padding: '0 10px' }} className={({ isActive }) =>
+                                isActive ? 'text-warning' : 'text-light'
+                            } to="/">Home</NavLink>
+                            <NavLink style={{ textDecoration: 'none', padding: '0 10px' }} className={({ isActive }) =>
+                                isActive ? 'text-warning' : 'text-light'
+                            } to="/about">About</NavLink>
+                            <NavLink style={{ textDecoration: 'none', padding: '0 10px' }} className={({ isActive }) =>
+                                isActive ? 'text-warning' : 'text-light'
+                            } to="/blog">Blog</NavLink>
 
                             {
-                                user ? <Nav.Link className='text-warning' onClick={() => signOut(auth)} as={Link} to="/login">Logout</Nav.Link> : <Nav.Link className='text-warning' as={Link} to="/login">Login</Nav.Link>
+                                user ? <NavLink style={{ textDecoration: 'none', padding: '0 10px' }} className={({ isActive }) =>
+                                    isActive ? 'text-warning' : 'text-light'
+                                } onClick={() => signOut(auth)} to="/login">Logout</NavLink> : <NavLink style={{ textDecoration: 'none', padding: '0 10px' }} className={({ isActive }) =>
+                                    isActive ? 'text-warning' : 'text-light'
+                                } to="/login">Login</NavLink>
                             }
                         </Nav>
                     </Navbar.Collapse>
