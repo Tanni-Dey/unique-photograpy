@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className='w-50 mx-auto'>
+        <div style={{ height: '100vh' }} className='w-50 mx-auto'>
             <h1 className='my-5'>About Me</h1>
             <h2 className='text-warning'>Tanni Rani Dey</h2>
             <p>I am Tanni Rani Dey, a student of Programming Hero. I want to be a full stack web developer.
