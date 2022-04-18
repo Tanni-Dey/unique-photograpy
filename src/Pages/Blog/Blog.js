@@ -3,7 +3,14 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <h1>blog</h1>
+            <h1>Blog</h1>
+            <div className='row'>
+                <div className='col-md-4'>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

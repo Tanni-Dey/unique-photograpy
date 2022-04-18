@@ -58,7 +58,7 @@ const Login = () => {
                     Login
                 </Button>
             </Form>
-            <p>{resetPassError?.message}</p>
+            <p>{resetPassError?.message}{loginError?.message}</p>
             <p>Forget Password ? <button onClick={handleResetPassword} className='btn btn-link text-warning' >Reset Password</button></p>
             <p>Create Account ? <Link className='text-warning' to='/signup'>Please Sign Up</Link></p>
             <Social />
